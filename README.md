@@ -17,7 +17,7 @@
     </a>
   </div>
     <a href="https://github.com/ahlem-phantom/microservice-project">
-    <img src="https://user-images.githubusercontent.com/78981558/195937501-2bc4b0ba-fe07-4c4f-8fe6-62dda9c1a4c5.gif" height="240" alt="HRMS">
+    <img src="https://user-images.githubusercontent.com/78981558/195950071-ebd01929-9566-434c-b2cd-8363d5d5b680.gif" height="240" alt="HRMS">
   </a>
 
 <h3 align="center">Humain Ressources Management System Microservices</h3>
