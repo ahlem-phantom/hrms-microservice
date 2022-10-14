@@ -17,8 +17,9 @@
     </a>
   </div>
     <a href="https://github.com/ahlem-phantom/microservice-project">
-    <img src="https://user-images.githubusercontent.com/78981558/195899875-cd519437-4956-471f-ae03-415c2e0e3e16.png" height="160" alt="HRMS">
+    <img src="https://user-images.githubusercontent.com/78981558/195950071-ebd01929-9566-434c-b2cd-8363d5d5b680.gif" height="240" alt="HRMS">
   </a>
+
 <h3 align="center">Humain Ressources Management System Microservices</h3>
   
 <p align="center">
@@ -46,7 +47,13 @@
 ## 📃 About The Project
 
 This is a **HRMS Backend** application. It provides opportunities for the **HR agents of a company** to manage `employees`, `departments`, `jobs` and `job seekers`. The HR agent can view the list of all employees using filters, for example viewing a list of employees of a particular department. Create, delete or edit employee records in the system. Manage the company position, such as creating, updating, or deleting job offers. Manage payrolls of the employee.
-
+<br><br>
+Our backend is powered by 5 microservices, all of which happen to be written in java using Spring Boot and JavaScript using NodeJS.
+<br> 
+ * **Employees Service**: Provides employees information like hiring date, email, role, date of birth etc.
+ * **Recruitment Service**: Provides recruitment information like Job Postings, Job Applicants etc.
+ * **Position Service**: Provides postion information like designation, department name, employees etc.
+ * **Payroll Service**: Provides payroll information like salaries etc.
 
  ### 📜 Project Main features
 
@@ -54,7 +61,16 @@ This is a **HRMS Backend** application. It provides opportunities for the **HR a
 
 
 ### 📐 Project Technical Architecture 
+Our sample microservices-based system consists of the following modules:
+- **gateway-service** - a module for running Spring Boot application that acts as a proxy/gateway in our architecture.
+- **config-service** - a module that uses Spring Cloud Config Server for running configuration server in the `native` mode. The configuration files are placed on the classpath.
+- **discovery-service** - a module thats Spring Cloud Eureka as an embedded discovery server.
+- **account-service** - a module containing the first of our microservices that allows to perform CRUD operation on in-memory repository of accounts
+- **customer-service** - a module containing the second of our microservices that allows to perform CRUD operation on in-memory repository of customers. It communicates with account-service. 
 
+The following picture illustrates the architecture described above.
+
+Description : 
 Each service is a separate microservice.
 Eureka: server, all the other services register to it.
 Gateway: entry point for other services. Protects other routes and validates tokens.
