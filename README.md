@@ -120,13 +120,19 @@ Use this space to show useful examples of how a project can be used. Additional 
 <!-- ROADMAP -->
 ## 🚩 Roadmap
 
-See the [open issues](https://github.com/ahlem-phantom/AI-HealthCare-Assistant/issues) for a list of proposed features (and known issues).
+- [x] Phase 1 : Implementation of Discovery and Gateway services
+	 - Implementation of Eureka as a discovery server
+	 - Implementation of Zull as a gateway or proxy server
 
- - [ ] Phase 1 : 
+- [ ] Phase 2 : Implementation of the main application microservices
+	- Employees Service
+	- Recruitment Service
+	- Position Service
+	- Payroll Service
 
-- [ ] Phase 2 : 
+- [ ] Phase 3.1 : Deployement of microservices using Docker
 
-- [ ] Phase 3 :
+
 
 
 <!-- CONTRIBUTING -->
