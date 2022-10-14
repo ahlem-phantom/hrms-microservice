@@ -12,12 +12,18 @@ endpoints:
 zuul:
   prefix: /api
   routes:
-    account:
-      path: /accounts/**
-      serviceId: account-service
-    customer:
-      path: /customers/**
-      serviceId: customer-service
+    employee:
+      path: /employees/**
+      serviceId: employee-service
+    payroll:
+      path: /payrolls/**
+      serviceId: payroll-service
+    position:
+      path: /positions/**
+      serviceId: position-service
+    recruitement:
+      path: /recruitements/**
+      serviceId: recruitement-service
 
 ribbon:
   eureka:

@@ -22,3 +22,55 @@ services:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
     links:
       - discovery
+
+  employee-service:
+    image: hrms/employee-service
+    container_name: employee-service
+    build:
+      context: ./employee-service
+      dockerfile: Dockerfile
+    ports:
+      - "1111:1111"
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
+    links:
+      - discovery
+
+  payroll-service:
+    image: hrms/payroll-service
+    container_name: payroll-service
+    build:
+      context: ./payroll-service
+      dockerfile: Dockerfile
+    ports:
+      - "2222:2222"
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
+    links:
+      - discovery
+
+  position-service:
+    image: hrms/position-service
+    container_name: position-service
+    build:
+      context: ./position-service
+      dockerfile: Dockerfile
+    ports:
+      - "3333:3333"
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
+    links:
+      - discovery
+  
+  recruitement-service:
+    image: hrms/recruitement-service
+    container_name: recruitement-service
+    build:
+      context: ./recruitement-service
+      dockerfile: Dockerfile
+    ports:
+      - "4444:4444"
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
+    links:
+      - discovery
