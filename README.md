@@ -55,6 +55,13 @@ This is a **HRMS Backend** application. It provides opportunities for the **HR a
 
 ### 📐 Project Technical Architecture 
 
+Each service is a separate microservice.
+Eureka: server, all the other services register to it.
+Gateway: entry point for other services. Protects other routes and validates tokens.
+Auth: authentication server, used for signing up and issuing tokens.
+Employee: employee service.
+So, you should register with Auth first, request a token, and use it for every request for which you need to be authenticated.
+Every request will hit the Gateway first, if need be, it will validate the token and grant you access to the service.
 
 ### 🚀 Built With
 
