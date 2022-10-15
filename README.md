@@ -82,7 +82,7 @@ The following picture illustrates the architecture described above.
 
 
 
-**Netflix Oss Componenets:**
+**Netflix Oss Components:**
 | Service | Description |
 | --- | --- |
 | Discovery Service | Netflix Eureka Server |
@@ -92,6 +92,7 @@ The following picture illustrates the architecture described above.
 | Centrelized Configuration | Spring Cloud Config Server |
 
 <br>
+
 - Each service is a `separate` microservice.
 - **Eureka:** is a discovery server, all the other microservices register to it.
 - **Gateway:** entry point for other services. Protects other routes and validates tokens.
