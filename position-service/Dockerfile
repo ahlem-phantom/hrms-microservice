@@ -1,4 +1,4 @@
 FROM openjdk:8-jdk-alpine
-ADD target/discovery-service.jar discovery-service.jar
+ADD target/position-service.jar position-service.jar
 EXPOSE 3333
-ENTRYPOINT ["java", "-jar", "/discovery-service.jar"]
+ENTRYPOINT ["java", "-jar", "/position-service.jar"]

@@ -1,4 +1,4 @@
 FROM openjdk:8-jdk-alpine
-ADD target/discovery-service.jar discovery-service.jar
+ADD target/payroll-service.jar payroll-service.jar
 EXPOSE 2222
-ENTRYPOINT ["java", "-jar", "/discovery-service.jar"]
+ENTRYPOINT ["java", "-jar", "/payroll-service.jar"]

@@ -12,12 +12,25 @@ services:
 
   gateway:
     image:  hrms/gateway-service
-    container_name: service-gateway
+    container_name: gateway-service
     build:
       context: ./gateway-service
       dockerfile: Dockerfile
     ports:
       - "8765:8765"
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
+    links:
+      - discovery
+
+  config:
+    image:  hrms/config-service
+    container_name: config-service
+    build:
+      context: ./gateway-service
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
     environment:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
     links:
