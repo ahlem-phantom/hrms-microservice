@@ -65,10 +65,10 @@ Our sample microservices-based system consists of the following modules:
 - **gateway-service** : a module for running Spring Boot application that acts as a proxy/gateway in our architecture.
 - **config-service** : a module that uses Spring Cloud Config Server for running configuration server in the `native` mode. The configuration files are placed on the classpath.
 - **discovery-service** : a module thats Spring Cloud Eureka as an embedded discovery server.
-- **employee-service** : a module containing the 1st microservice that allows to perform CRUD operation on in-memory repository of employee
-- **payroll-service** : a module containing the 2nd microservice that allows to perform CRUD operation on in-memory repository of customers. It communicates with account-service. 
-- **recruitement-service** : a module containing the 3rd microservices that allows to perform CRUD operation on in-memory repository of accounts
-- **position-service** : a module containing the 4th microservices that allows to perform CRUD operation on in-memory repository of accounts
+- **employee-service** : a module containing the 1st microservice that allows to perform CRUD operation on in-memory repository of employee.
+- **payroll-service** : a module containing the 2nd microservice that allows to perform CRUD operation on in-memory repository of payrolls. It communicates with account-service. 
+- **recruitement-service** : a module containing the 3rd microservices that allows to perform CRUD operation on in-memory repository of recruitements.
+- **position-service** : a module containing the 4th microservices that allows to perform CRUD operation on in-memory repository of positions.
 
 The following picture illustrates the architecture described above.
 
