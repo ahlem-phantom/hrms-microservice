@@ -62,22 +62,29 @@ Our backend is powered by 5 microservices, all of which happen to be written in 
 
 ### 📐 Project Technical Architecture 
 Our sample microservices-based system consists of the following modules:
-- **gateway-service** - a module for running Spring Boot application that acts as a proxy/gateway in our architecture.
-- **config-service** - a module that uses Spring Cloud Config Server for running configuration server in the `native` mode. The configuration files are placed on the classpath.
-- **discovery-service** - a module thats Spring Cloud Eureka as an embedded discovery server.
-- **account-service** - a module containing the first of our microservices that allows to perform CRUD operation on in-memory repository of accounts
-- **customer-service** - a module containing the second of our microservices that allows to perform CRUD operation on in-memory repository of customers. It communicates with account-service. 
+- **gateway-service** : a module for running Spring Boot application that acts as a proxy/gateway in our architecture.
+- **config-service** : a module that uses Spring Cloud Config Server for running configuration server in the `native` mode. The configuration files are placed on the classpath.
+- **discovery-service** : a module thats Spring Cloud Eureka as an embedded discovery server.
+- **employee-service** : a module containing the 1st microservice that allows to perform CRUD operation on in-memory repository of employee
+- **payroll-service** : a module containing the 2nd microservice that allows to perform CRUD operation on in-memory repository of customers. It communicates with account-service. 
+- **recruitement-service** : a module containing the 3rd microservices that allows to perform CRUD operation on in-memory repository of accounts
+- **position-service** : a module containing the 4th microservices that allows to perform CRUD operation on in-memory repository of accounts
 
 The following picture illustrates the architecture described above.
 
-Description : 
-Each service is a separate microservice.
-Eureka: server, all the other services register to it.
-Gateway: entry point for other services. Protects other routes and validates tokens.
-Auth: authentication server, used for signing up and issuing tokens.
-Employee: employee service.
-So, you should register with Auth first, request a token, and use it for every request for which you need to be authenticated.
-Every request will hit the Gateway first, if need be, it will validate the token and grant you access to the service.
+<div align="center">
+  <h1>
+<img src="https://user-images.githubusercontent.com/78981558/195961417-86ac70be-68d5-4d6a-9bc2-83de49f23183.png" width="700" height="600">
+</h1>
+</div>
+
+**Description:**
+<br>
+- Each service is a `separate` microservice.
+- **Eureka:** is a discovery server, all the other microservices register to it.
+- **Gateway:** entry point for other services. Protects other routes and validates tokens.
+- **Auth:** authentication server, used for signing up and issuing tokens.
+- So, you should register with Auth first, request a token, and use it for every request for which you need to be authenticated. Every request will hit the Gateway first, if need be, it will validate the token and grant you access to the service.
 
 ### 🚀 Built With
 
