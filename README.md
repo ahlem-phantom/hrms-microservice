@@ -19,6 +19,7 @@
     <a href="https://github.com/ahlem-phantom/microservice-project">
     <img src="https://user-images.githubusercontent.com/78981558/195950071-ebd01929-9566-434c-b2cd-8363d5d5b680.gif" height="240" alt="HRMS">
   </a>
+  
 
 <h3 align="center">Humain Ressources Management System Microservices</h3>
   
@@ -88,6 +89,35 @@ The following picture illustrates the architecture described above.
 
 ### 🚀 Built With
 
+You may find below the list of the frameworks/libraries that we used to build this demo project :
+<br/>
+
+ <div align="center">
+	
+   <a href="https://spring.io/projects/spring-boot">
+   <img src="https://github.com/devicons/devicon/blob/master/icons/spring/spring-original-wordmark.svg" title="Spring" alt="Srping" width="150" height="150"/>
+  </a>
+  
+   <a href="https://nodejs.org/en/">
+   <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg" title="NodeJS" alt="NodeJS" width="150" height="150"/>
+   </a>
+  
+   <a href="https://www.docker.com">
+   <img src="https://github.com/devicons/devicon/blob/master/icons/docker/docker-original-wordmark.svg" title="Docker" alt="Docker" width="150" height="150"/>
+   </a>
+  
+   <a href="https://www.mongodb.com/">
+    <img src="https://github.com/devicons/devicon/blob/master/icons/mongodb/mongodb-original-wordmark.svg" title="MongoDB" alt="MongoDB" width="150" height="150"/>
+   </a>
+  
+   <a href="https://www.mysql.com/fr">
+   <img src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original-wordmark.svg" title="MySQL" alt="MySQL" width="150" height="150"/>
+   </a>
+   <br>
+    <a href="https://www.h2database.com/html/main.html">
+   <img src="https://user-images.githubusercontent.com/78981558/195962905-d2a557cf-979e-4a07-808b-a7cb45b2a3c9.png" title="MySQL" alt="MySQL" width="150" height="150"/>
+   </a>
+  </div>
 
 
 
@@ -98,7 +128,8 @@ To get a local copy up and running follow these simple example steps.
 ### 🚧 Prerequisites
 
 You may find below the list of things you need to use this project :
-
+* You need to have Maven, JDK8+.
+* You will need to install docker in order to use the `docker-compose`.
 
 ### 🛠 Installation
 
@@ -108,8 +139,12 @@ _In order to install the app you need to follow the instructions below :_
    ```sh
    git clone https://github.com/ahlem-phantom/microservice-project.git
    ```
+2. Dockerize the application :
+   ```sh
+   docker-compose up 
+   ```
 
-
+4. Open localhost:8761 in the browser and that's it you can use our application's microservices 🎉!
  
 
 
@@ -130,14 +165,16 @@ Use this space to show useful examples of how a project can be used. Additional 
 - [x] Phase 1 : Implementation of Discovery and Gateway services
 	 - Implementation of Eureka as a discovery server
 	 - Implementation of Zull as a gateway or proxy server
-
+	 - Implementation of config server
+	 
 - [ ] Phase 2 : Implementation of the main application microservices
 	- Employees Service
 	- Recruitment Service
 	- Position Service
 	- Payroll Service
 
-- [ ] Phase 3.1 : Deployement of microservices using Docker
+- [ ] Phase 3 : Deployement of microservices using Docker
+
 
 
 
