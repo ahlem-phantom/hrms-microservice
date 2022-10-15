@@ -77,9 +77,20 @@ The following picture illustrates the architecture described above.
   <h1>
 <img src="https://user-images.githubusercontent.com/78981558/195989737-495e11c2-b7b0-4f64-bc3d-9a76ea64a661.png" width="800" height="750">
 </h1>
+
 </div>
 
-**Description:**
+
+
+**Netflix Oss Componenets:**
+| Service | Description |
+| --- | --- |
+| Discovery Service | Netflix Eureka Server |
+| Gateway Service | Netflix Zuul Server |
+| Dynamic Routing and Load Balancing Service | Netflix Ribbon Server |
+| Circuit Breaker | Netflix Hystrix Server |
+| Centrelized Configuration | Spring Cloud Config Server |
+
 <br>
 - Each service is a `separate` microservice.
 - **Eureka:** is a discovery server, all the other microservices register to it.
