@@ -54,11 +54,11 @@ This is a **HRMS Backend** application. It provides opportunities for the **HR a
  ### 📜 Project Main features
 Our backend is powered by 5 microservices, all of which happen to be written in java using Spring Boot and JavaScript using NodeJS.
 <br> 
- * **Employees Service**: Provides employees information like hiring date, email, role, date of birth etc.
+ * **Employees Service**: Provides PIM (Personal information management for employees and candidates). Provides employees information like hiring date, email, role, date of birth etc.
  * **Recruitment Service**: Provides recruitment information like Job Postings, Job Applicants etc.
  * **Position Service**: Provides postion information like designation, department name, employees etc.
  * **Payroll Service**: Provides payroll information like salaries etc.
-
+ * **Holiday/Leave Service**: Provides holiday or leave information. Managing leave and defining holidays.
 
 
 ### 📐 Project Technical Architecture 
