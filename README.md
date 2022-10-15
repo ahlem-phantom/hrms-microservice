@@ -49,15 +49,15 @@
 
 This is a **HRMS Backend** application. It provides opportunities for the **HR agents of a company** to manage `employees`, `departments`, `jobs` and `job seekers`. The HR agent can view the list of all employees using filters, for example viewing a list of employees of a particular department. Create, delete or edit employee records in the system. Manage the company position, such as creating, updating, or deleting job offers. Manage payrolls of the employee.
 <br><br>
+
+
+ ### 📜 Project Main features
 Our backend is powered by 5 microservices, all of which happen to be written in java using Spring Boot and JavaScript using NodeJS.
 <br> 
  * **Employees Service**: Provides employees information like hiring date, email, role, date of birth etc.
  * **Recruitment Service**: Provides recruitment information like Job Postings, Job Applicants etc.
  * **Position Service**: Provides postion information like designation, department name, employees etc.
  * **Payroll Service**: Provides payroll information like salaries etc.
-
- ### 📜 Project Main features
-
 
 
 
