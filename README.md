@@ -139,7 +139,7 @@ _In order to install the app you need to follow the instructions below :_
    ```sh
    git clone https://github.com/ahlem-phantom/microservice-project.git
    ```
-2. Dockerize the application :
+2. Build and run the docker containers of the application :
    ```sh
    docker-compose up 
    ```
