@@ -27,7 +27,7 @@ services:
     image:  hrms/config-service
     container_name: config-service
     build:
-      context: ./gateway-service
+      context: ./config-service
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
