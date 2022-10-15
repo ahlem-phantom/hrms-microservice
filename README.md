@@ -69,6 +69,7 @@ Our sample microservices-based system consists of the following modules:
 - **payroll-service** : a module containing the 2nd microservice that allows to perform CRUD operation on in-memory repository of payrolls. It communicates with account-service. 
 - **recruitement-service** : a module containing the 3rd microservices that allows to perform CRUD operation on in-memory repository of recruitements.
 - **position-service** : a module containing the 4th microservices that allows to perform CRUD operation on in-memory repository of positions.
+- **leave/holiday-service** : a module containing the 5th microservices that allows to perform CRUD operation on in-memory repository of leave and holidays.
 
 The following picture illustrates the architecture described above.
 
@@ -171,6 +172,8 @@ Use this space to show useful examples of how a project can be used. Additional 
 	- Recruitment Service
 	- Position Service
 	- Payroll Service
+	- Leave/Holiday Service
+
 
 - [ ] Phase 3 : Deployement of microservices using Docker
 
