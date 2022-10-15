@@ -24,6 +24,9 @@ zuul:
     recruitement:
       path: /recruitements/**
       serviceId: recruitement-service
+    leave-holiday:
+      path: /leave-holidays/**
+      serviceId: leave-holiday-service
 
 ribbon:
   eureka:

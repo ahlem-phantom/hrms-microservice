@@ -87,3 +87,17 @@ services:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
     links:
       - discovery
+  
+
+  leave-holiday-service:
+    image: hrms/leave-holiday-service
+    container_name: leave-holiday-service
+    build:
+      context: ./leave-holiday-service
+      dockerfile: Dockerfile
+    ports:
+      - "5555:5555"
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
+    links:
+      - discovery
