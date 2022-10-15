@@ -75,9 +75,10 @@ The following picture illustrates the architecture described above.
 
 <div align="center">
   <h1>
-<img src="https://user-images.githubusercontent.com/78981558/195961417-86ac70be-68d5-4d6a-9bc2-83de49f23183.png" width="700" height="600">
+<img src="https://user-images.githubusercontent.com/78981558/195987473-ae3f568e-7388-4335-bb68-5c3de76e7324.png" width="700" height="600">
 </h1>
 </div>
+
 
 **Description:**
 <br>
