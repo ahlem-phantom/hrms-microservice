@@ -29,6 +29,11 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
 		</dependency>
+		<dependency>  
+			<groupId>com.h2database</groupId>  
+			<artifactId>h2</artifactId>  
+			<scope>runtime</scope>  
+		</dependency>  
 	</dependencies>
 
 	<build>

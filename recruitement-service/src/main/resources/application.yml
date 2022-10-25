@@ -1,5 +1,11 @@
 server:
   port: ${PORT:4444}
+  
+spring:
+  datasource:
+        password: password
+        url: jdbc:h2:dev
+        username: SA
 
 eureka:
   client:
