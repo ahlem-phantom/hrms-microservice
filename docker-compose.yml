@@ -1,4 +1,5 @@
 version: '3.5'
+
 services:
 
   discovery:
@@ -95,37 +96,54 @@ services:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
     links:
       - discovery
-  # conge-service:
-  #   image: hrms/conge-service
-  #   container_name: conge-service
-  #   build:
-  #     context: ./conge-service
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - "5555:8080"
-  #   environment:
-  #     EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
-  #   links:
-  #     - discovery
+  conge-service:
+    image: hrms/conge-service
+    container_name: conge-service
+    build:
+      context: ./conge-service
+      dockerfile: Dockerfile
+    ports:
+      - "5555:8080"
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
+    links:
+      - discovery
   
-  # contrat-service:
-  #   image: hrms/contrat-service
-  #   container_name: contrat-service
-  #   build:
-  #     context: ./contrat-service
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - "2222:8080"
-  #   environment:
-  #     EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
-  #   links:
-  #     - discovery
+  contrat-service:
+    image: hrms/contrat-service
+    container_name: contrat-service
+    build:
+      context: ./contrat-service
+      dockerfile: Dockerfile
+    ports:
+      - "2222:8080"
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
+    links:
+      - discovery
 
-  # auth-service:
-  #   image: hrms/auth-service
-  #   container_name: auth-service
-  #   ports:
-  #     - "6666:3000"
-  #   hostname: auth
-  #   depends_on:
-  #     - "Mongo"
+  mongo:
+    container_name: mongo-db
+    image: "mongo:5-focal"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data_container:/data/db
+    hostname: mongo
+
+
+  auth-service:
+    image: hrms/auth-service
+    container_name: auth-service
+    ports:
+      - "6666:3000"
+    hostname: auth
+    depends_on:
+      - "mongo"
+
+volumes:
+   mongodb_data_container:
