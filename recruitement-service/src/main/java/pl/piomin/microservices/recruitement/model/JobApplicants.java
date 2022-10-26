@@ -1,58 +1,43 @@
 package pl.piomin.microservices.recruitement.model;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Data
+@NoArgsConstructor
+@Table(name = "job-applicants")
 public class JobApplicants {
 
-    private Integer id;
+    @Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
 
+    @Column(name = "firstName")
     private String firstName;
 
+    @Column(name = "lastName")
     private String lastName;
 
-    private ApplicantStatus status;
+    @Column(name = "status")
+    private String status;
 
+    @Column(name = "email")
     private String email;
 
-    public JobApplicants() {
-
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
+  
+    public JobApplicants(int id, String firstName, String lastName, String status,String email) {
         this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
         this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public ApplicantStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(ApplicantStatus status) {
         this.status = status;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+        this. email =  email;
     }
 }

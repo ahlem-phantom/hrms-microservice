@@ -9,6 +9,12 @@ endpoints:
   health:
     sensitive: false
 
+# spring : 
+#    security:
+#      user:
+#       name: user
+#       password: user
+
 zuul:
   prefix: /api
   routes:
@@ -16,17 +22,23 @@ zuul:
       path: /employees/**
       serviceId: employee-service
     payroll:
-      path: /payrolls/**
-      serviceId: payroll-service
+      path: /contrats/**
+      serviceId: contract-service
     position:
       path: /positions/**
       serviceId: position-service
     recruitement:
       path: /recruitements/**
       serviceId: recruitement-service
-    leave-holiday:
-      path: /leave-holidays/**
-      serviceId: leave-holiday-service
+    conges:
+      path: /conges/**
+      serviceId: conge-service
+    account:
+      path: /accounts/**
+      serviceId: account-service
+    customer:
+      path: /customers/**
+      serviceId: customer-service
 
 ribbon:
   eureka:

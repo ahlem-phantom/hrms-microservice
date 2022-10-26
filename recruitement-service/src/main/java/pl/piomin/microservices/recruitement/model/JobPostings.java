@@ -1,88 +1,55 @@
 package pl.piomin.microservices.recruitement.model;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Data
+@NoArgsConstructor
+@Table(name = "job-postings")
 public class JobPostings {
 
-	private Integer id;
+    @Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
 
-	private Number minSalary;
+	@Column(name = "minSalary")
+	private int minSalary;
 
-	private Number maxSalary;
+	@Column(name = "maxSalary")
+	private int maxSalary;
 
-	private String applicationStatus;
-
+	@Column(name = "applicationStatus")
+	private ApplicantStatus applicationStatus;
+	
+	@Column(name = "jobDescription")
 	private String jobDescription;
 
+	@Column(name = "noOfOpenings")
 	private String noOfOpenings;
 
+	@Column(name = "contractType")
 	private String contractType;
 
-	private Integer contractPeriod;
+	@Column(name = "contractPeriod")
+	private int contractPeriod;
 
-	public JobPostings() {
-
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public Number getMinSalary() {
-		return minSalary;
-	}
-
-	public void setMinSalary(Number minSalary) {
+	public JobPostings(int id, int minSalary,int maxSalary, ApplicantStatus status,String jobDescription,String noOfOpenings,String contractType,int contractPeriod) {
+        this.id = id;
 		this.minSalary = minSalary;
-	}
-
-	public Number getMaxSalary() {
-		return maxSalary;
-	}
-
-	public void setMaxSalary(Number maxSalary) {
 		this.maxSalary = maxSalary;
-	}
-
-	public String getApplicationStatus() {
-		return applicationStatus;
-	}
-
-	public void setApplicationStatus(String applicationStatus) {
-		this.applicationStatus = applicationStatus;
-	}
-
-	public String getJobDescription() {
-		return jobDescription;
-	}
-
-	public void setJobDescription(String jobDescription) {
+		this.applicationStatus = status;
 		this.jobDescription = jobDescription;
-	}
-
-	public String getNoOfOpenings() {
-		return noOfOpenings;
-	}
-
-	public void setNoOfOpenings(String noOfOpenings) {
 		this.noOfOpenings = noOfOpenings;
-	}
-
-	public String getContractType() {
-		return contractType;
-	}
-
-	public void setContractType(String contractType) {
 		this.contractType = contractType;
-	}
+		this.contractPeriod	= contractPeriod;
+    }
 
-	public Integer getContractPeriod() {
-		return contractPeriod;
-	}
-
-	public void setContractPeriod(Integer contractPeriod) {
-		this.contractPeriod = contractPeriod;
-	}
+	
 }

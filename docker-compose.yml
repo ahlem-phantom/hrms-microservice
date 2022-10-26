@@ -23,18 +23,14 @@ services:
     links:
       - discovery
 
-  config:
-    image:  hrms/config-service
-    container_name: config-service
+  zipkin-service:
+    image:  hrms/zipkin-service
+    container_name: zipkin-service
     build:
-      context: ./config-service
+      context: ./zipkin-service
       dockerfile: Dockerfile
     ports:
-      - "8080:8080"
-    environment:
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
-    links:
-      - discovery
+      - "9411:9411"
 
   employee-service:
     image: hrms/employee-service
@@ -43,20 +39,7 @@ services:
       context: ./employee-service
       dockerfile: Dockerfile
     ports:
-      - "1111:1111"
-    environment:
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
-    links:
-      - discovery
-
-  payroll-service:
-    image: hrms/payroll-service
-    container_name: payroll-service
-    build:
-      context: ./payroll-service
-      dockerfile: Dockerfile
-    ports:
-      - "2222:2222"
+      - "1111:8082"
     environment:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
     links:
@@ -69,7 +52,7 @@ services:
       context: ./position-service
       dockerfile: Dockerfile
     ports:
-      - "3333:3333"
+      - "3333:8080"
     environment:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
     links:
@@ -82,22 +65,67 @@ services:
       context: ./recruitement-service
       dockerfile: Dockerfile
     ports:
-      - "4444:4444"
+      - "4444:8080"
     environment:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
     links:
       - discovery
-  
-
-  leave-holiday-service:
-    image: hrms/leave-holiday-service
-    container_name: leave-holiday-service
+  account-service:
+    image: piomin/account-service
+    container_name: account-service
     build:
-      context: ./leave-holiday-service
+      context: ./account-service
       dockerfile: Dockerfile
     ports:
-      - "5555:5555"
+      - "8541:8541"
     environment:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
     links:
       - discovery
+
+  customer-service:
+    image: piomin/customer-service
+    container_name: customer-service
+    build:
+      context: ./customer-service
+      dockerfile: Dockerfile
+    ports:
+      - "8542:8542"
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
+    links:
+      - discovery
+  # conge-service:
+  #   image: hrms/conge-service
+  #   container_name: conge-service
+  #   build:
+  #     context: ./conge-service
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "5555:8080"
+  #   environment:
+  #     EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
+  #   links:
+  #     - discovery
+  
+  # contrat-service:
+  #   image: hrms/contrat-service
+  #   container_name: contrat-service
+  #   build:
+  #     context: ./contrat-service
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "2222:8080"
+  #   environment:
+  #     EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
+  #   links:
+  #     - discovery
+
+  # auth-service:
+  #   image: hrms/auth-service
+  #   container_name: auth-service
+  #   ports:
+  #     - "6666:3000"
+  #   hostname: auth
+  #   depends_on:
+  #     - "Mongo"

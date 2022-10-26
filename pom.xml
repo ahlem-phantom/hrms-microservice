@@ -2,8 +2,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>pl.piomin</groupId>
-    <artifactId>sample-spring-microservices</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>spring-microservices</artifactId>
+    <version>2.1.0.RELEASE</version>
     <packaging>pom</packaging>
 
     <parent>
@@ -21,6 +21,15 @@
     <modules>
         <module>discovery-service</module>
         <module>gateway-service</module>
+        <module>zipkin-service</module>
+        <module>recruitement-service</module>
+        <module>employee-service</module>
+        <module>position-service</module>
+        <module>account-service</module>
+        <module>customer-service</module>
+
+        <!-- <module>contrat-service</module>
+        <module>conge-service</module> -->
     </modules>
 
     <dependencies>
@@ -29,40 +38,6 @@
             <artifactId>lombok</artifactId>
             <version>1.18.12</version>
         </dependency>
-        <dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency> 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
     </dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 
 </project>
