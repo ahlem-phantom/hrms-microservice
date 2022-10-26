@@ -27,9 +27,8 @@
         <module>position-service</module>
         <module>account-service</module>
         <module>customer-service</module>
-
-        <!-- <module>contrat-service</module>
-        <module>conge-service</module> -->
+        <module>contrat-service</module>
+        <module>conge-service</module> 
     </modules>
 
     <dependencies>
